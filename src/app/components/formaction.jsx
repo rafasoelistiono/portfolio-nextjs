@@ -21,7 +21,7 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          I'm passionate about collaborating on innovative projects and expanding my network. Don't hesitate to reach out – I look forward to hearing from you!
+          passionate about collaborating on innovative projects and expanding my network. Dont hesitate to reach out – I look forward to hearing from you!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/rafasoelistiono">
