@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
@@ -24,33 +23,33 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
-          LOGO
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] border-b border-[#33353F] shadow-lg">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="text-2xl md:text-3xl text-white font-bold">
+          Rafa
         </Link>
-        <div className="mobile-menu block md:hidden">
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setNavbarOpen(!navbarOpen)}
+          className="md:hidden p-2 text-white hover:bg-[#33353F] rounded focus:outline-none"
+          aria-label="Toggle navigation"
+        >
           {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           )}
-        </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex md:items-center md:space-x-6">
+          <ul className="flex space-x-6">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink href={link.path} title={link.title} />
@@ -59,7 +58,24 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+
+      {/* Mobile Menu Overlay */}
+      {navbarOpen && (
+        <div className="fixed inset-0 bg-[#121212] bg-opacity-80 z-20">
+          <div className="flex justify-end p-4">
+            <button
+              onClick={() => setNavbarOpen(false)}
+              className="text-white"
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <MenuOverlay links={navLinks} />
+        </div>
+      )}
     </nav>
   );
 };

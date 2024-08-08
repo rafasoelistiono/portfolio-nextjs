@@ -10,11 +10,11 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Node.js</li>
-        <li>Express</li>
+        <li>Next.js</li>
         <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>Python</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>SEO</li>
       </ul>
     ),
   },
@@ -23,8 +23,7 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>University of Indonesia, Jakarta</li>
       </ul>
     ),
   },
@@ -33,8 +32,11 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Hackerrank Basic Python</li>
+        <li>SoloLearn JavaScript</li>
+        <li>SoloLearn C++</li>
+        <li>Google Marketing Fundamentals</li>
+        <li>Google Analytics for Beginner</li>
       </ul>
     ),
   },
@@ -51,43 +53,39 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+    <section className="text-white py-16 px-4 md:px-8 xl:px-16" id="about">
+      <div className="md:grid md:grid-cols-2 gap-8 xl:gap-16 items-center">
+        <div className="rounded-lg overflow-hidden">
+          <Image src="/images/about-image.jpeg" width={500} height={500} />
+        </div>
+        <div className="mt-8 md:mt-0 text-left flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-4">About Me</h2>
+          <p className="text-base lg:text-lg text-gray-300">
+            I'm a web developer who loves startups and making new connections.
+            I also like to help others learn about new technologies, so if you'd
+            like me to teach you something or send you resources, hit me up!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              {" "}
-              Certifications{" "}
+              Certifications
             </TabButton>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 bg-gray-800 rounded-lg p-6">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>

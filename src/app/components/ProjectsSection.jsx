@@ -7,57 +7,39 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "Client Website",
+    description: "Alula Printing: Premium Quality Prints, Custom Designs, Fast Turnaround for Your Business Needs.",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "Landing Page"],
+    gitUrl: "https://github.com/rafasoelistiono/alulaprinting",
+    previewUrl: "https://alulaprinthing.netlify.app/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "Client Website",
+    description: "Empowering education at Rumah Tahfidz through innovative web landing page.",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "Landing Page"],
+    gitUrl: "https://github.com/rafasoelistiono/LOMBA",
+    previewUrl: "https://rafasoelistiono.github.io/LOMBA",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "Organization Website",
+    description: "landing page for my organization in my school. This web is very interactive & SEO",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "Website"],
+    gitUrl: "https://github.com/rafasoelistiono/rohisdouven",
+    previewUrl: "https://rohisdouven.netlify.app/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
+    title: "Client Website",
+    description: "Expert Web Solutions for UMKM in Wood and Furniture Industry, Elevate Your Business with Basama ID",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "Landing Page"],
+    gitUrl: "https://github.com/rafasoelistiono/client1",
+    previewUrl: "https://rafasoelistiono.github.io/client1/",
   },
 ];
 
@@ -92,16 +74,16 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="Website"
+          isSelected={tag === "Website"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Landing Page"
+          isSelected={tag === "Landing Page"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}
