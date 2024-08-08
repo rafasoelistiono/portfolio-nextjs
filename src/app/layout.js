@@ -9,7 +9,7 @@ export const metadata = {
   metaTags: [
     {
       name: 'google-site-verification',
-      content: 'xJq5LZDkKzd0Mil2lc9xiPHzIBPvRzuq9PbZIonUhBU'
+      content: 'XG3yDt4pxAH4MVa2wN9E0189Job5b8nY-t5CuaX0W5M'
     }
   ]
 }
